@@ -1,4 +1,5 @@
 Telegram Channel - https://t.me/TegraBot_off
+
 EN:
 For the initial setup of the bot, you need to bind the webhook to the host, configure config.ini by entering:
 1) Token API of the bot (You can get it here - https://t.me/BotFather)
