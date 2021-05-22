@@ -13,13 +13,26 @@ III. Using TegraBot
 TegraBot connection:
   include tegrabot.php;
 TegraBot functions:
-  1.send($request_message, $response_message, $e(Optional)); - send text messages
+  1.sendMessage($request_message, $response_message, $e(Optional)); - Sending text messages
     $request_message (String) - Message that will trigger the bot
     $response_message (String) - The message that the bot will send
     $e (String, Optional) - Execute custom php code after sending message
+    Examples:
+      1. sendMessage('/start', 'Hello!');
+      2. sendMessage('/start', 'Hello!', 'function_1();')
+2. sendPhoto($request_message, $photo_url, $e(Optional)); - Sending images
+  $request_message (String) - Message that will trigger the bot
+  $photo_url (String) - The image that the bot will send
+  $e (String, Optional) - Execute custom php code after sending message
+  Примеры:
+    sendPhoto('testphoto', 'https://yt3.ggpht.com/yti/ANoDKi4MFxMBb5KrloiKZJVZn04TgGu1HBIj4fL_12FALQ=s88-c-k-c0x00ffffff-no-rj-mo');
+
+3. sendVideo($request_message, $video_url, $e(Optional)) - Sending videos
+  $request_message (String) - Message that will trigger the bot
+  $video_url (String) - The video that the bot will send
+  $e (String, Optional) - Execute custom php code after sending message
 Optional TegraBot variables:
   1. $default_message - Standard message of the bot if it could not recognize the command
-  
 RU:
 I. Первоначальная настройка
 Для первоначальной настройки бота необходимо привязать вебхук к хосту, настроить config.ini, введя:
@@ -35,12 +48,24 @@ III. Использование TegraBot
 Подключение TegraBot:
   include tegrabot.php;
 Функции TegraBot:
-  1. send($request_message, $response_message, $e(Optional)); - Отправка текстовых сообщений
+  1. sendMessage($request_message, $response_message, $e(Optional)); - Отправка текстовых сообщений
     $request_message (String) - Сообщение, при котором сработает бот
     $response_message (String) - Сообщение, которое отправит бот
     $e (String, Optional) - Выполнение пользовательского php кода после отправки сообщения
     Примеры:
-      1. send('/start', 'Hello!');
-      2. send('/start', 'Hello!', "echo 'Hello world!;'")
+      1. sendMessage('/start', 'Hello!');
+      2. sendMessage('/start', 'Hello!', 'function_1();')
+
+  2. sendPhoto($request_message, $photo_url, $e(Optional)); - Отправка изображений
+    $request_message (String) - Сообщение, при котором сработает бот
+    $photo_url (String) - Изображение, которое отправит бот  
+    $e (String, Optional) - Выполнение пользовательского php кода после отправки сообщения
+    Примеры:
+      sendPhoto('testphoto', 'https://yt3.ggpht.com/yti/ANoDKi4MFxMBb5KrloiKZJVZn04TgGu1HBIj4fL_12FALQ=s88-c-k-c0x00ffffff-no-rj-mo');
+
+  3. sendVideo($request_message, $video_url, $e(Optional)) - Отправка видео
+    $request_message (String) - Сообщение, при котором сработает бот
+    $video_url (String) - Видео, которое отправит бот  
+    $e (String, Optional) - Выполнение пользовательского php кода после отправки сообщения
 Дополнительные переменные TegraBot:
   1. $default_message - Стандартное сообщение бота, если он не смог распознать команду
